@@ -1,0 +1,18 @@
+{
+	"sans": [
+		"budget.suarzac.com"
+	],
+	"issuer_data": {
+		"url": "https://acme-v02.api.letsencrypt.org/acme/cert/04467120ff7c56aacfdb75b71997d16b873a",
+		"ca": "https://acme-v02.api.letsencrypt.org/directory",
+		"renewal_info": {
+			"suggestedWindow": {
+				"start": "2024-08-11T07:59:13Z",
+				"end": "2024-08-13T07:59:13Z"
+			},
+			"_uniqueIdentifier": "kydGmAOpUWiOmNbEQkjbI79YlNI.BEZxIP98VqrP23W3GZfRa4c6",
+			"_retryAfter": "2024-06-13T14:39:15.535609413Z",
+			"_selectedTime": "2024-08-11T17:45:00Z"
+		}
+	}
+}
