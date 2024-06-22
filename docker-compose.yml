@@ -1,34 +1,18 @@
 services:
-  # caddy:
-  #   container_name: caddy
-  #   image: caddy:alpine
-  #   environment:
-  #     - CLOUDFLARE_EMAIL=suarzac@icloud.com
-  #     - ACME_AGREE=true
-  #     - CF_API_TOKEN=vMnS1THGhm75IFLYXu0r5OtFIHnzO_PZ0ooCgK8f
-  #     - CF_ZONE_ID=763e4fe160411edafe1eed68c2c582db
-  #   volumes:
-  #     - ./Caddyfile:/etc/caddy/Caddyfile:ro
-  #     - ./caddy/data:/data
-  #     - ./caddy/config:/config
-  #   ports:
-  #     - "80:80"
-  #     - '443:443'
-
   caddy:
     container_name: caddy
-    build: .
+    build: ./caddy
     environment:
       - CLOUDFLARE_EMAIL=suarzac@icloud.com
       - ACME_AGREE=true
       - CF_API_TOKEN=vMnS1THGhm75IFLYXu0r5OtFIHnzO_PZ0ooCgK8f
       - CF_ZONE_ID=763e4fe160411edafe1eed68c2c582db
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy/data:/data
       - ./caddy/config:/config
     ports:
-      - "80:80"
+      - '80:80'
       - '443:443'
 
   actual-server:
@@ -39,6 +23,6 @@ services:
       - '5006:5006'
     volumes:
       - ./actual-data:/data
-      - ./config.json:/data/config.json
-      - ./localhost.key:/data/budget.suarzac.com.key
-      - ./localhost.crt:/data/budget.suarzac.com.crt
+      - ./actual_server/config.json:/data/config.json
+      - ./actual_server/localhost.key:/data/budget.suarzac.com.key
+      - ./actual_server/localhost.crt:/data/budget.suarzac.com.crt

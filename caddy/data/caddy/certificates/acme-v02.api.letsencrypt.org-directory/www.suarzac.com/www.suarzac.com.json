@@ -1,0 +1,18 @@
+{
+	"sans": [
+		"www.suarzac.com"
+	],
+	"issuer_data": {
+		"url": "https://acme-v02.api.letsencrypt.org/acme/cert/04ca68c77defe6d6a01e4aa25c82075ffbb4",
+		"ca": "https://acme-v02.api.letsencrypt.org/directory",
+		"renewal_info": {
+			"suggestedWindow": {
+				"start": "2024-08-20T08:06:29.333333334Z",
+				"end": "2024-08-22T08:06:29.333333334Z"
+			},
+			"_uniqueIdentifier": "nytfzzwhT50Et-0rLMTGcIvS1w0.BMpox33v5tagHkqiXIIHX_u0",
+			"_retryAfter": "2024-06-22T14:46:32.240095837Z",
+			"_selectedTime": "2024-08-20T23:29:09Z"
+		}
+	}
+}
