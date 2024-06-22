@@ -3,10 +3,10 @@ services:
     container_name: caddy
     build: ./caddy
     environment:
-      - CLOUDFLARE_EMAIL=suarzac@icloud.com
-      - ACME_AGREE=true
-      - CF_API_TOKEN=vMnS1THGhm75IFLYXu0r5OtFIHnzO_PZ0ooCgK8f
-      - CF_ZONE_ID=763e4fe160411edafe1eed68c2c582db
+      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
+      - ACME_AGREE=${ACME_AGREE}
+      - CF_API_TOKEN=${CF_API_TOKEN}
+      - CF_ZONE_ID=${CF_ZONE_ID}
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy/data:/data
