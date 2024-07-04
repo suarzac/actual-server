@@ -7,11 +7,10 @@ budget.suarzac.com {
 
 }
 
-www.suarzac.com {
-    reverse_proxy actual-server:5006
+rill.suarzac.com {
+    reverse_proxy localhost:9009
 
     tls {
         dns cloudflare {env.CF_API_TOKEN}
     }
-
 }
