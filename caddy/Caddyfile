@@ -7,10 +7,10 @@ budget.suarzac.com {
 
 }
 
-rill.suarzac.com {
-    reverse_proxy localhost:9009
+// rill.suarzac.com {
+//     reverse_proxy localhost:9009
 
-    tls {
-        dns cloudflare {env.CF_API_TOKEN}
-    }
-}
+//     tls {
+//         dns cloudflare {env.CF_API_TOKEN}
+//     }
+// }
