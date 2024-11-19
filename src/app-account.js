@@ -1,5 +1,8 @@
 import express from 'express';
-import errorMiddleware from './util/error-middleware.js';
+import {
+  errorMiddleware,
+  requestLoggerMiddleware,
+} from './util/middlewares.js';
 import validateUser, { validateAuthHeader } from './util/validate-user.js';
 import {
   bootstrap,
@@ -11,7 +14,7 @@ import {
 
 let app = express();
 app.use(errorMiddleware);
-
+app.use(requestLoggerMiddleware);
 export { app as handlers };
 
 // Non-authenticated endpoints:
@@ -45,7 +48,9 @@ app.post('/login', (req, res) => {
   switch (loginMethod) {
     case 'header': {
       let headerVal = req.get('x-actual-password') || '';
-      console.debug('HEADER VALUE: ' + headerVal);
+      const obfuscated =
+        '*'.repeat(headerVal.length) || 'No password provided.';
+      console.debug('HEADER VALUE: ' + obfuscated);
       if (headerVal == '') {
         res.send({ status: 'error', reason: 'invalid-header' });
         return;
@@ -94,5 +99,3 @@ app.get('/validate', (req, res) => {
     res.send({ status: 'ok', data: { validated: true } });
   }
 });
-
-app.use(errorMiddleware);
