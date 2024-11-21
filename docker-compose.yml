@@ -1,20 +1,4 @@
 services:
-  caddy:
-    container_name: caddy
-    build: ./caddy
-    environment:
-      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
-      - ACME_AGREE=${ACME_AGREE}
-      - CF_API_TOKEN=${CF_API_TOKEN}
-      - CF_ZONE_ID=${CF_ZONE_ID}
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./caddy/data:/data
-      - ./caddy/config:/config
-    ports:
-      - '80:80'
-      - '443:443'
-
   actual-server:
     image: actualbudget/actual-server:latest
     container_name: actual_server
